@@ -76,7 +76,7 @@ def get_agent_from_data(files):
 
 if process_button:
     if not files:
-        st.error("Please upload a document!")
+        st.error("Please upload at least one document!")
     else:
         with st.spinner('Processing...'):
             st.session_state["agent"] = get_agent_from_data(files)

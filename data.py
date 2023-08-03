@@ -128,6 +128,12 @@ TEMPLATE_STRING = '''
     Question: {question}
 '''
 
+TEMPLATE_STRING_ZERO_SHOT = '''
+    You are a hiring professional reviewing resumes from potential candidates. Answer the following question accurately based on the resume database.
+
+    Question: {question}
+'''
+
 # ----------------------------------------------------------------
 # Create an sample QnA for work and project related information
 WORK_EXPERIENCE_SCHEMA = {

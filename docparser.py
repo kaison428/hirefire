@@ -102,6 +102,20 @@ def parse_resume(llm, resume, resume_sample, question_schema, answer_data, promp
 
     return parsed_resume
 
+def parse_resume_from_retrieval(retrieval_chain, question_schema, prompt_template):
+    parsed_resume = {}
+    for key in question_schema:
+        question = question_schema[key]
+        
+        query = prompt_template.format_messages(
+                    question=question,
+                )
+        
+        data = retrieval_chain.run(query)
+        parsed_resume[key] = data
+
+    return parsed_resume
+
 def get_item_info(target_key, data_obj, resume, resume_sample, question_schema, answer_data, prompt_template):
 
     # define llm --------------------------------
