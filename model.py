@@ -87,7 +87,7 @@ def get_agent(resumes):
         Tool(
             name='resume_database',
             func=retrieval_chain.run,
-            description=f"always priortize using this tools first. useful to access the information of the available pool of applicants/candidates",
+            description=f"always priortize using this tools first. required for accessing information and answering questions about any person.",
         ),
     ]
 
