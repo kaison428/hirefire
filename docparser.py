@@ -15,7 +15,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.docstore.document import Document
 
-def get_database_from_resume(resumes):
+def get_database_from_resume(resumes, method='retrieval'):
 
     # get template ------------------------------
     prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING)
@@ -46,7 +46,16 @@ def get_database_from_resume(resumes):
         question = 'Provide the full name of the person in the document in this format:{Full Name}'
         candidate = retrieval_chain.run(question)
 
-        resume_data = parse_resume(llm, resume, RESUME_SAMPLE, QUESTION_SCHEMA, ANSWER_DATA, prompt_template)
+        if method == 'retrieval':
+            # get template ------------------------------
+            prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING_ZERO_SHOT)
+            resume_data = parse_resume_from_retrieval(retrieval_chain, QUESTION_SCHEMA, prompt_template)
+            print(method)
+
+        else:
+            # get template ------------------------------
+            prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING)
+            resume_data = parse_resume(llm, resume, RESUME_SAMPLE, QUESTION_SCHEMA, ANSWER_DATA, prompt_template)
 
         # save data ----------------------------------------------------------------
         resume_database[candidate] = resume_data
@@ -109,7 +118,7 @@ def parse_resume_from_retrieval(retrieval_chain, question_schema, prompt_templat
         
         query = prompt_template.format_messages(
                     question=question,
-                )
+                )[0].content
         
         data = retrieval_chain.run(query)
         parsed_resume[key] = data
