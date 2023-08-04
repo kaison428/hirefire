@@ -75,6 +75,8 @@ def get_agent_from_data(files):
     return agent
 
 if process_button:
+    st.session_state.messages = []
+    
     if not files:
         st.error("Please upload at least one document!")
     else:

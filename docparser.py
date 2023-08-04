@@ -10,6 +10,7 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.agents import Tool
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -26,16 +27,18 @@ def get_database_from_resume(resumes, method='retrieval'):
     # resume database
     resume_database = {}
     raw_resumes = {}
+    retrieval_chains = {}
 
     for i, resume in enumerate(resumes):
 
         # split text --------------------------------
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=0)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
         splits = text_splitter.split_text(resume)
         splits = [Document(page_content=t) for t in splits[:]]
 
         # create vectorstore for retrieval --------------------------------
         embeddings = OpenAIEmbeddings()
+        # embeddings = HuggingFaceInstructEmbeddings()
         vectorstore = Chroma.from_documents(splits, embeddings, collection_name=f'candiate{i}')
 
         retrieval_chain = RetrievalQA.from_chain_type(
@@ -49,7 +52,7 @@ def get_database_from_resume(resumes, method='retrieval'):
         if method == 'retrieval':
             # get template ------------------------------
             prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING_ZERO_SHOT)
-            resume_data = parse_resume_from_retrieval(retrieval_chain, QUESTION_SCHEMA, prompt_template)
+            resume_data = parse_resume_from_retrieval(retrieval_chain, QUESTION_SCHEMA , ANSWER_DATA, prompt_template)
             print(method)
 
         else:
@@ -60,8 +63,9 @@ def get_database_from_resume(resumes, method='retrieval'):
         # save data ----------------------------------------------------------------
         resume_database[candidate] = resume_data
         raw_resumes[candidate] = resume
+        retrieval_chains[(f'candiate{i}', candidate)] = retrieval_chain
 
-    return resume_database, raw_resumes
+    return resume_database, raw_resumes, retrieval_chains
 
 def get_complete_database(resume_database, raw_resumes):
 
@@ -111,13 +115,15 @@ def parse_resume(llm, resume, resume_sample, question_schema, answer_data, promp
 
     return parsed_resume
 
-def parse_resume_from_retrieval(retrieval_chain, question_schema, prompt_template):
+def parse_resume_from_retrieval(retrieval_chain, question_schema, answer_data, prompt_template):
     parsed_resume = {}
     for key in question_schema:
         question = question_schema[key]
+        answer = answer_data[key]
         
         query = prompt_template.format_messages(
                     question=question,
+                    answer=answer,
                 )[0].content
         
         data = retrieval_chain.run(query)

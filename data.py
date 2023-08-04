@@ -7,7 +7,7 @@ QUESTION_SCHEMA = {
         If this is not found, output N/A.
     ''',
 
-    'Institution': '''
+    'University': '''
         Provide the most recent academic institution the candidate studied at. 
         Output the full name of the institution.
         If this is not found, output N/A.
@@ -78,7 +78,7 @@ QUESTION_SCHEMA = {
 ANSWER_DATA = {
     'Location': 'Toronto, Canada',
 
-    'Institution': 'University of Toronto',
+    'University': 'University of Toronto',
 
     'Degree': 'Bachelor of Applied Science',
 
@@ -132,6 +132,10 @@ TEMPLATE_STRING_ZERO_SHOT = '''
     You are a hiring professional reviewing resumes from potential candidates. Answer the following question accurately based on the resume database.
 
     Question: {question}
+
+    An example of a possible answer and format is delimited by triple backticks.
+
+    Answer: {answer}
 '''
 
 # ----------------------------------------------------------------

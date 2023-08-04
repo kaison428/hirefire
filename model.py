@@ -12,7 +12,7 @@ from langchain.docstore.document import Document
 
 from langchain.chains import RetrievalQA
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.agents.agent_toolkits import ZapierToolkit
 from langchain.utilities.zapier import ZapierNLAWrapper
@@ -52,19 +52,32 @@ def get_text_from_pdf(fileobj):
 
 # LangChain --------------------------------
 def get_agent(resumes):
+
     # 1. construct database
-    resume_database, raw_resumes = get_database_from_resume(resumes)
+    resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='not_retrieval')
     # resume_database = get_complete_database(resume_database, raw_resumes)
 
     resume_database_text = get_text_from_json(resume_database)
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+    # ----------------------------------------------------------------
+    # save it for inspection
+    fname = 'output.txt'
+    with open(fname, 'w') as f:
+        f.write(resume_database_text)
+
+    fname = 'output.txt'
+    with open(fname, 'r') as f:
+        resume_database_text = f.read()
+    # ----------------------------------------------------------------
+
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=0)
     splits = text_splitter.split_text(resume_database_text)
 
     docs = [Document(page_content=t) for t in splits[:]]
 
     # get vector database
-    embeddings = OpenAIEmbeddings()
+    # embeddings = OpenAIEmbeddings()
+    embeddings = HuggingFaceInstructEmbeddings()
     vectorstore = Chroma.from_documents(docs, embeddings, collection_name="resume_database")
 
     # 2. create toolsets ----------------------------------------------------------------
@@ -87,11 +100,34 @@ def get_agent(resumes):
         Tool(
             name='resume_database',
             func=retrieval_chain.run,
-            description=f"always priortize using this tools first. required for accessing information and answering questions about any person.",
+            description=f"useful for when you need to answer questions about any person or candidates.",
         ),
     ]
 
     tools += zapier_toolkit
+
+    # 3. set up agent --------------------------------
+    llm = OpenAI(temperature=0)    
+    memory = ConversationBufferWindowMemory(
+        memory_key="chat_history", 
+        k=2)
+    
+    system_message = SystemMessage(
+        content="""
+        Always respond using the tools. Say you do not know if you do not know the answer.
+        """
+        )
+
+    agent = initialize_agent(
+        tools, 
+        llm, 
+        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
+        verbose=True, 
+        memory=memory,
+        agent_kwargs={"system_message": system_message.content},
+    )
+
+    return agent
 
     # 3. set up agent --------------------------------
     llm = OpenAI(temperature=0)    
