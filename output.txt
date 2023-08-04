@@ -9,7 +9,7 @@ Vaibhav Logar's Graduation Date: 09/2021
 Vaibhav Logar's Email: vaibhavlogar.vl@gmail.com
 Vaibhav Logar's Phone Number: 9057823578
 Vaibhav Logar's GPA: N/A
-Vaibhav Logar's Work Experience: ['MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT)', 'LEAPON.', 'EASYFIN', 'LOW CALORIE ICE CREAM STARTUP', 'SOCIOTECH STARTUP']
+Vaibhav Logar's Work Experience: ['MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT)', 'LEAPON.', 'EASYFIN', 'LOW CALORIE ICE CREAM STARTUP', 'SOCIOTECH STARTUP', 'HOW TO START A VENTURE"WORKSHOP']
 Vaibhav Logar's Projects: ['CO-FOUNDER | MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT)', 'BUSINESS DEVELOPMENT EXECUTIVE | LEAPON.', 'EASYFIN | INNOVATIVE PROJECTS MANAGER.', 'EASYFIN | INVESTMENT BANKING INTERN.', 'LOW CALORIE ICE CREAM STARTUP | CEO.', 'SOCIOTECH STARTUP | CEO', 'HOW TO START A VENTURE"WORKSHOP | EVENT MANAGER']
 Vaibhav Logar's Skills: ['Python', 'Advanced Excel', 'Power BI', 'SQL', 'Flutter', 'Bubble.io', 'Microsoft office', 'Canvas', 'Agile', 'Wix', 'Wordpress', 'Tensorflow', 'NLP', 'Spacy', 'Pandas', 'Scikit-learn', 'LLM integration', 'Sentiment analysis', 'Semantic search']
 

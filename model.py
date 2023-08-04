@@ -93,11 +93,6 @@ def get_agent(resumes):
 
     tools = [
         Tool(
-            name="Calculator",
-            func=llm_math_chain.run,
-            description="useful for when you need to answer questions about math and numerical problems.",
-        ),
-        Tool(
             name='resume_database',
             func=retrieval_chain.run,
             description=f"useful for when you need to answer questions about any person or candidates.",
@@ -106,45 +101,45 @@ def get_agent(resumes):
 
     tools += zapier_toolkit
 
-    # 3. set up agent --------------------------------
-    llm = OpenAI(temperature=0)    
-    memory = ConversationBufferWindowMemory(
-        memory_key="chat_history", 
-        k=2)
+    # # 3. set up agent --------------------------------
+    # llm = OpenAI(temperature=0)    
+    # memory = ConversationBufferWindowMemory(
+    #     memory_key="chat_history", 
+    #     k=2)
     
-    system_message = SystemMessage(
-        content="""
-        Always respond using the tools. Say you do not know if you do not know the answer.
-        """
-        )
+    # system_message = SystemMessage(
+    #     content="""
+    #     Always respond using the tools. Say you do not know if you do not know the answer.
+    #     """
+    #     )
 
-    agent = initialize_agent(
-        tools, 
-        llm, 
-        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
-        verbose=True, 
-        memory=memory,
-        agent_kwargs={"system_message": system_message.content},
-    )
+    # agent = initialize_agent(
+    #     tools, 
+    #     llm, 
+    #     agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
+    #     verbose=True, 
+    #     memory=memory,
+    #     agent_kwargs={"system_message": system_message.content},
+    # )
 
-    return agent
+    # return agent
+
+    # # 3. set up agent --------------------------------
+    # llm = OpenAI(temperature=0)    
+    # memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
+    # agent = initialize_agent(
+    #     tools, 
+    #     llm, 
+    #     agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
+    #     verbose=True, 
+    #     memory=memory,
+    # )
+
+    # return agent
 
     # 3. set up agent --------------------------------
-    llm = OpenAI(temperature=0)    
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-
-    agent = initialize_agent(
-        tools, 
-        llm, 
-        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
-        verbose=True, 
-        memory=memory,
-    )
-
-    return agent
-
-    # 3. set up agent --------------------------------
-    llm = ChatOpenAI(temperature=0)
+    llm = ChatOpenAI(temperature=0, model='gpt-4')
     memory = ConversationBufferWindowMemory(
         memory_key="chat_history", 
         k=2,
