@@ -53,14 +53,18 @@ input_container = st.container()
 context_container = st.container()
 colored_header(label='', description='', color_name='blue-30')
 process_button = st.button("Process")
+stats_container = st.container()
 chat_container = st.container()
 
 # Zapier Button --------------------------------
 with zapier_container:
     st.markdown('**Zapier** allows you to automate email generation, scheduling and more! Get your API key [here](https://nla.zapier.com/docs/authentication/#api-key)!')
     st.markdown('_Note: Your API key will be deleted immediately once the webpage is refreshed._')
-    user_zapier_api_key = st.text_input('Enter your Zapier API Key here', 'sk-...-...')
-    os.environ['ZAPIER_NLA_API_KEY'] = user_zapier_api_key
+    st.session_state["zapier"] = False
+    user_zapier_api_key = st.text_input('Enter your Zapier API Key here first to enable the API functions', '')
+    if user_zapier_api_key:
+        os.environ['ZAPIER_NLA_API_KEY'] = user_zapier_api_key
+        st.session_state["zapier"] = True
 
 # User input ------------------------------------------------------------------
 ## Function for taking user provided PDF as input
@@ -80,9 +84,8 @@ def get_agent_from_data(files):
         resumes.append(get_text_from_pdf(file))
 
     # 2. Build an agent from the database
-    agent = get_agent(resumes)
-    # Note: this agent stays in the app space and will be fed to the backend for post processing
-    return agent
+    overall_chain, agent, df_database = get_agent(resumes, use_zapier=st.session_state["zapier"])
+    return overall_chain, agent, df_database
 
 if process_button:
     st.session_state.messages = []
@@ -91,10 +94,15 @@ if process_button:
         st.error("Please upload at least one document!")
     else:
         with st.spinner('Processing... It will take a while...'):
-            st.session_state["agent"] = get_agent_from_data(files)
+            st.session_state["process_chain"], st.session_state["agent"], st.session_state["dataframe"] = get_agent_from_data(files)
 
         st.success('Done!')
         st.session_state["submit"] = True
+
+# Statistics ----------------------------------------------------------------
+with stats_container:
+    if st.session_state.get("submit"):
+        st.dataframe(st.session_state["dataframe"])
 
 # Chatbot GUI ----------------------------------------------------------------
 with chat_container:
@@ -116,7 +124,12 @@ with chat_container:
             with st.chat_message("assistant"):
                 message_placeholder = st.empty()
                 agent = st.session_state["agent"]
-                full_response = agent.run(prompt)
+                process_chain = st.session_state["process_chain"]
+
+                processed_prompt = process_chain({'prompt': prompt})['answer']
+                print(processed_prompt)
+                full_response = agent.run(processed_prompt)
+
                 message_placeholder.markdown(full_response)
 
             st.session_state.messages.append({"role": "assistant", "content": full_response})

@@ -10,3 +10,4 @@ llama-cpp-python==0.1.67
 chromadb==0.3.22
 InstructorEmbedding==1.0.1
 sentence-transformers==2.2.2
+pandas==1.4.4

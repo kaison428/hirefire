@@ -3,6 +3,8 @@ from os.path import isfile, join
 
 from data import *
 
+import pandas as pd
+
 import ast
 import copy
 
@@ -187,3 +189,25 @@ def get_text_from_json(database):
         text += '\n'
 
     return text
+
+
+def get_df_from_json(database):
+    database_dict = {
+        'Name': [],
+        'Location': [],
+        'University': [],
+        'Major': [],
+        'Graduation Date': [],
+        'Email': [],
+    }
+
+    fields = ['Location', 'University', 'Major', 'Graduation Date', 'Email']
+
+    for name in database:
+        database_dict['Name'].append(name)
+        person_info = database[name]
+
+        for field in fields:
+            database_dict[field].append(person_info[field])
+
+    return pd.DataFrame(database_dict)

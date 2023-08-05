@@ -10,15 +10,20 @@ from langchain.chat_models import ChatOpenAI
 
 from langchain.docstore.document import Document
 
-from langchain.chains import RetrievalQA
+from langchain.chains import RetrievalQA, LLMChain, SequentialChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.agents.agent_toolkits import ZapierToolkit
 from langchain.utilities.zapier import ZapierNLAWrapper
 from langchain.agents import AgentType
-from langchain.memory import ConversationBufferWindowMemory, ConversationBufferMemory
+from langchain.memory import ConversationBufferWindowMemory, ConversationBufferMemory, SimpleMemory
 from langchain.agents import initialize_agent, Tool
+
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+)
 
 from langchain import LLMMathChain, SerpAPIWrapper
 
@@ -31,6 +36,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage
 )
+from langchain.prompts import PromptTemplate
 
 # Utilities ------------------------------
 def get_text_from_pdf(fileobj):
@@ -51,13 +57,14 @@ def get_text_from_pdf(fileobj):
     return combined_text
 
 # LangChain --------------------------------
-def get_agent(resumes):
+def get_agent(resumes, use_zapier=False):
 
     # 1. construct database
     resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='not_retrieval')
     # resume_database = get_complete_database(resume_database, raw_resumes)
 
     resume_database_text = get_text_from_json(resume_database)
+    resume_database_df = get_df_from_json(resume_database)
 
     # ----------------------------------------------------------------
     # save it for inspection
@@ -83,14 +90,10 @@ def get_agent(resumes):
     # 2. create toolsets ----------------------------------------------------------------
 
     llm = ChatOpenAI(temperature=0)
-
-    llm_math_chain = LLMMathChain.from_llm(llm=llm)
     retrieval_chain = RetrievalQA.from_chain_type(
             llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
         )
-    zapier = ZapierNLAWrapper()
-    zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier).get_tools()
-
+    
     tools = [
         Tool(
             name='resume_database',
@@ -99,7 +102,10 @@ def get_agent(resumes):
         ),
     ]
 
-    tools += zapier_toolkit
+    if use_zapier:
+        zapier = ZapierNLAWrapper()
+        zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier).get_tools()
+        tools += zapier_toolkit
 
     # # 3. set up agent --------------------------------
     # llm = OpenAI(temperature=0)    
@@ -156,5 +162,47 @@ def get_agent(resumes):
         max_iterations=4,
     )
 
-    return agent
+    # 4. set up a chain for email idenfication -----------------------
+    # chain 1 --------------------------------
+    llm = ChatOpenAI(temperature=0)
+    template_string = '''
+        Identify if the prompt is about drafting, sending email and/or creating calendar. Output 'Y' if it does and 'N' if it does not.
+        
+        Prompt: ```{prompt}```
+    '''
+    prompt_template = PromptTemplate(
+        input_variables=["prompt"],
+        template=template_string,
+    )
+    email_id_chain = LLMChain(llm=llm, prompt=prompt_template, output_key="is_email")
 
+    # chain 2 --------------------------------
+    llm = ChatOpenAI(temperature=0)
+    template_string = '''
+        is_email: {is_email}
+        Prompt: ```{prompt}```
+
+        If is_email is N, output the Prompt immediately and skip the following instructions.
+
+        If is_email is Y, check if the Prompt contains any email address. 
+        If the Prompt contains email addresses, output the Prompt immediately.
+        If the Prompt does not contain email addresses, output the Final Message delimited by triple backticks.
+
+        Final Message: ```Repeat this message in your output: Please enter at least one email address.```
+        
+    '''
+    prompt_template = PromptTemplate(
+        input_variables=["prompt", "is_email"],
+        template=template_string,
+    )
+    address_chain = LLMChain(llm=llm, prompt=prompt_template, output_key="answer")
+
+    # final chain --------------------------------
+    overall_chain = SequentialChain(
+        memory=SimpleMemory(),
+        chains=[email_id_chain, address_chain],
+        input_variables=["prompt"],
+        output_variables=["answer"],
+        verbose=True)
+    
+    return overall_chain, agent, resume_database_df
