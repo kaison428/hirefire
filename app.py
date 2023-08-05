@@ -4,6 +4,7 @@ from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
 
 from model import *
+from data import  *
 
 # Set API Key ----------------------------------------------------------------
 import os
@@ -14,7 +15,7 @@ os.environ['ZAPIER_NLA_API_KEY'] = st.secrets['ZAPIER_NLA_API_KEY']
 def clear_submit():
     st.session_state["submit"] = False
 
-st.set_page_config(page_title="HireFire - An LLM-powered hiring assistant", page_icon=":bulb:", layout='wide')
+st.set_page_config(page_title="HireBrighter - An LLM-powered hiring assistant", page_icon=":star:", layout='wide')
 st.markdown(
     """
     <style>
@@ -29,11 +30,11 @@ st.markdown(
 )
 
 
-st.header("HireFire - Understand your resume database")
+st.header("HireBrighter - Understand your Resume Database")
 
 # Sidebar contents
 with st.sidebar:
-    st.title(':bulb: HireFire')
+    st.title(':star: HireBrighter')
     st.markdown('''
     ## About
     This app is an LLM-powered hiring assistant built using:
@@ -46,11 +47,20 @@ with st.sidebar:
     st.write('Made by HYPE AI :book:')
 
 # Layout of input/response containers ----------------------------------------------------------------
+zapier_container = st.container()
+colored_header(label='', description='', color_name='blue-30')
 input_container = st.container()
 context_container = st.container()
 colored_header(label='', description='', color_name='blue-30')
 process_button = st.button("Process")
 chat_container = st.container()
+
+# Zapier Button --------------------------------
+with zapier_container:
+    st.markdown('**Zapier** allows you to automate email generation, scheduling and more! Get your API key [here](https://nla.zapier.com/docs/authentication/#api-key)!')
+    st.markdown('_Note: Your API key will be deleted immediately once the webpage is refreshed._')
+    user_zapier_api_key = st.text_input('Enter your Zapier API Key here', 'sk-...-...')
+    os.environ['ZAPIER_NLA_API_KEY'] = user_zapier_api_key
 
 # User input ------------------------------------------------------------------
 ## Function for taking user provided PDF as input
@@ -76,11 +86,11 @@ def get_agent_from_data(files):
 
 if process_button:
     st.session_state.messages = []
-    
+
     if not files:
         st.error("Please upload at least one document!")
     else:
-        with st.spinner('Processing...'):
+        with st.spinner('Processing... It will take a while...'):
             st.session_state["agent"] = get_agent_from_data(files)
 
         st.success('Done!')

@@ -276,3 +276,7 @@ RESUME_SAMPLE = '''
     /circle_blankTechnical report writing
     /circle_blankEnglish and Mandarin speaker
 '''
+
+# Zapier Access ----------------------------------------------------------------
+CLIENT_ID = 'nla-OQTQoJkKAMWcKlISSrQ4wYMMGeSa0yf4CrqG'
+REDIRECT_URL = 'https://hirefire.streamlit.app'
