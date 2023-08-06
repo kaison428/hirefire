@@ -29,7 +29,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 st.header("HireBrighter - Understand your Resume Database")
 
 # Sidebar contents

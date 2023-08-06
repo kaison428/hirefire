@@ -17,8 +17,11 @@ from langchain.agents import Tool
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.docstore.document import Document
+from langchain.chains.summarize import load_summarize_chain
+from langchain import PromptTemplate
+from langchain.chains.llm import LLMChain
 
-def get_database_from_resume(resumes, method='retrieval'):
+def get_database_from_resume(resumes, method='retrieval', summarize=True):
 
     # get template ------------------------------
     prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING)
@@ -30,6 +33,19 @@ def get_database_from_resume(resumes, method='retrieval'):
     resume_database = {}
     raw_resumes = {}
     retrieval_chains = {}
+
+    # clean up resume text
+    prompt_template = """Remove all the 1) useless characters and terms and 2) remove specific work experience/project description from the resume. Return a cleaned version:
+    "{text}"
+    CLEANED RESUME:"""
+    prompt = PromptTemplate.from_template(prompt_template)
+    llm = ChatOpenAI(temperature=0)
+    summarize_chain = LLMChain(llm=llm, prompt=prompt)
+
+    resume_sample_local = RESUME_SAMPLE
+    if summarize:
+        resume_sample_local = summarize_chain.run(RESUME_SAMPLE)
+        print(resume_sample_local)
 
     for i, resume in enumerate(resumes):
 
@@ -60,7 +76,10 @@ def get_database_from_resume(resumes, method='retrieval'):
         else:
             # get template ------------------------------
             prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING)
-            resume_data = parse_resume(llm, resume, RESUME_SAMPLE, QUESTION_SCHEMA, ANSWER_DATA, prompt_template)
+            if summarize:
+                resume = summarize_chain.run(resume)
+
+            resume_data = parse_resume(llm, resume, resume_sample_local, QUESTION_SCHEMA, ANSWER_DATA, prompt_template)
 
         # save data ----------------------------------------------------------------
         resume_database[candidate] = resume_data
@@ -197,11 +216,12 @@ def get_df_from_json(database):
         'Location': [],
         'University': [],
         'Major': [],
+        'Expertise': [],
         'Graduation Date': [],
         'Email': [],
     }
 
-    fields = ['Location', 'University', 'Major', 'Graduation Date', 'Email']
+    fields = ['Location', 'University', 'Major', 'Expertise', 'Graduation Date', 'Email']
 
     for name in database:
         database_dict['Name'].append(name)

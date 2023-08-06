@@ -133,9 +133,9 @@ TEMPLATE_STRING_ZERO_SHOT = '''
 
     Question: {question}
 
-    An example of a possible answer and format is delimited by triple backticks.
+    An example of a possible answer and format is delimited by triple backticks. The answer must not be a paragraph or sentence.
 
-    Answer: {answer}
+    ```{answer}```
 '''
 
 # ----------------------------------------------------------------

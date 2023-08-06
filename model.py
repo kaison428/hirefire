@@ -60,7 +60,7 @@ def get_text_from_pdf(fileobj):
 def get_agent(resumes, use_zapier=False):
 
     # 1. construct database
-    resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='not_retrieval')
+    resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='non-retrieval', summarize=True)
     # resume_database = get_complete_database(resume_database, raw_resumes)
 
     resume_database_text = get_text_from_json(resume_database)
@@ -106,43 +106,6 @@ def get_agent(resumes, use_zapier=False):
         zapier = ZapierNLAWrapper()
         zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier).get_tools()
         tools += zapier_toolkit
-
-    # # 3. set up agent --------------------------------
-    # llm = OpenAI(temperature=0)    
-    # memory = ConversationBufferWindowMemory(
-    #     memory_key="chat_history", 
-    #     k=2)
-    
-    # system_message = SystemMessage(
-    #     content="""
-    #     Always respond using the tools. Say you do not know if you do not know the answer.
-    #     """
-    #     )
-
-    # agent = initialize_agent(
-    #     tools, 
-    #     llm, 
-    #     agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
-    #     verbose=True, 
-    #     memory=memory,
-    #     agent_kwargs={"system_message": system_message.content},
-    # )
-
-    # return agent
-
-    # # 3. set up agent --------------------------------
-    # llm = OpenAI(temperature=0)    
-    # memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-
-    # agent = initialize_agent(
-    #     tools, 
-    #     llm, 
-    #     agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, 
-    #     verbose=True, 
-    #     memory=memory,
-    # )
-
-    # return agent
 
     # 3. set up agent --------------------------------
     llm = ChatOpenAI(temperature=0, model='gpt-4')
