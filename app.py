@@ -83,7 +83,7 @@ def get_agent_from_data(files):
         resumes.append(get_text_from_pdf(file))
 
     # 2. Build an agent from the database
-    overall_chain, agent, df_database = get_agent(resumes, use_zapier=st.session_state["zapier"])
+    overall_chain, agent, df_database = get_agent(resumes, use_zapier=st.session_state["zapier"], embedding_type='InstructXL')
     return overall_chain, agent, df_database
 
 if process_button:
@@ -126,7 +126,6 @@ with chat_container:
                 process_chain = st.session_state["process_chain"]
 
                 processed_prompt = process_chain({'prompt': prompt})['answer']
-                print(processed_prompt)
                 full_response = agent.run(processed_prompt)
 
                 message_placeholder.markdown(full_response)

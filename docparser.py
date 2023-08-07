@@ -45,7 +45,6 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
     resume_sample_local = RESUME_SAMPLE
     if summarize:
         resume_sample_local = summarize_chain.run(RESUME_SAMPLE)
-        print(resume_sample_local)
 
     for i, resume in enumerate(resumes):
 
@@ -56,7 +55,6 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
 
         # create vectorstore for retrieval --------------------------------
         embeddings = OpenAIEmbeddings()
-        # embeddings = HuggingFaceInstructEmbeddings()
         vectorstore = Chroma.from_documents(splits, embeddings, collection_name=f'candiate{i}')
 
         retrieval_chain = RetrievalQA.from_chain_type(
@@ -71,7 +69,6 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
             # get template ------------------------------
             prompt_template = ChatPromptTemplate.from_template(TEMPLATE_STRING_ZERO_SHOT)
             resume_data = parse_resume_from_retrieval(retrieval_chain, QUESTION_SCHEMA , ANSWER_DATA, prompt_template)
-            print(method)
 
         else:
             # get template ------------------------------

@@ -5,6 +5,9 @@ import openai
 from docparser import *
 import PyPDF2
 
+# streamlit
+import streamlit as st
+
 # LangChain
 from langchain.chat_models import ChatOpenAI
 
@@ -56,8 +59,12 @@ def get_text_from_pdf(fileobj):
 
     return combined_text
 
+@st.cache_resource
+def load_instruct():
+    return HuggingFaceInstructEmbeddings()
+
 # LangChain --------------------------------
-def get_agent(resumes, use_zapier=False):
+def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
 
     # 1. construct database
     resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='non-retrieval', summarize=True)
@@ -83,8 +90,11 @@ def get_agent(resumes, use_zapier=False):
     docs = [Document(page_content=t) for t in splits[:]]
 
     # get vector database
-    # embeddings = OpenAIEmbeddings()
-    embeddings = HuggingFaceInstructEmbeddings()
+    if embedding_type == 'OpenAI':
+        embeddings = OpenAIEmbeddings()
+    else:
+        embeddings = load_instruct()
+
     vectorstore = Chroma.from_documents(docs, embeddings, collection_name="resume_database")
 
     # 2. create toolsets ----------------------------------------------------------------

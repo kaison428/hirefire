@@ -1,54 +1,15 @@
-List of candidates:Vaibhav Logar,Alexander Philip Tarek Massin,Yuqi (Grace) Hu,Hongyu (Liam) Ma,
+List of candidates:Krishna Advait Sripada,
 
-Vaibhav Logar's Location: N/A
-Vaibhav Logar's University: University of Toronto
-Vaibhav Logar's Degree: Bachelor of Business Administration
-Vaibhav Logar's Major: Management and International Business program (MIB) with Data Science minor
-Vaibhav Logar's Expertise: Marketing research, Financial Analysis, Machine learning
-Vaibhav Logar's Graduation Date: N/A
-Vaibhav Logar's Email: vaibhavlogar.vl@gmail.com
-Vaibhav Logar's Phone Number: 9057823578
-Vaibhav Logar's GPA: N/A
-Vaibhav Logar's Work Experience: ['MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT)', 'LEAPON', 'EASYFIN', 'LOW CALORIE ICE CREAM STARTUP', 'SOCIOTECH STARTUP']
-Vaibhav Logar's Projects: ['CO-FOUNDER | MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT)', 'BUSINESS DEVELOPMENT EXECUTIVE | LEAPON', 'EASYFIN | INNOVATIVE PROJECTS MANAGER (Promotion)', 'EASYFIN | INVESTMENT BANKING INTERN', 'LOW CALORIE ICE CREAM STARTUP | CEO', 'SOCIOTECH STARTUP | CEO', 'AUTHOR OF "WAR OF 24TH CENTURY"']
-Vaibhav Logar's Skills: ['Python (Data analytics, web scraping)', 'Advanced Excel', 'Power BI', 'SQL', 'Flutter', 'Bubble.io', 'Microsoft Office', 'Canvas', 'Agile', 'Wix', 'Wordpress', 'Tensorflow', 'NLP', 'Spacy', 'Pandas', 'Scikit-learn', 'LLM integration', 'Sentiment analysis', 'Semantic search', 'Keras']
-
-Alexander Philip Tarek Massin's Location: Toronto, Canada
-Alexander Philip Tarek Massin's University: Ryerson University
-Alexander Philip Tarek Massin's Degree: B.Sc. (Hons.) Computer Science
-Alexander Philip Tarek Massin's Major: Computer Science
-Alexander Philip Tarek Massin's Expertise: Full Stack Development, Programming Languages, Frameworks
-Alexander Philip Tarek Massin's Graduation Date: 04/2022
-Alexander Philip Tarek Massin's Email: amassin@ryerson.ca
-Alexander Philip Tarek Massin's Phone Number: 4168942836
-Alexander Philip Tarek Massin's GPA: 4.18
-Alexander Philip Tarek Massin's Work Experience: ['Royal Bank of Canada Toronto, ON', 'Ontario Government - MGCS Toronto, ON', 'Verto Inc. Toronto, ON', 'Optimity Inc Toronto, ON']
-Alexander Philip Tarek Massin's Projects: ['Imperial Caps - Marketplace Application React.js, Express.js, Git, Digital Ocean, Semantic UI', 'Discord Bot Application Python, Java']
-Alexander Philip Tarek Massin's Skills: ['Java', 'Python', 'SQL', 'TypeScript', 'C#', 'C++', 'JavaScript', 'Ruby', 'C', 'Angular', 'React', 'Node.js', '.NET', 'Express.js', 'Ruby On Rails', 'Sequelize', 'Discord.py', 'Javacord', 'NumPy', 'Pandas', 'Flying Saucer']
-
-Yuqi (Grace) Hu's Location: Toronto, Canada
-Yuqi (Grace) Hu's University: University of Toronto
-Yuqi (Grace) Hu's Degree: Bachelor of Applied Science
-Yuqi (Grace) Hu's Major: Civil Engineering
-Yuqi (Grace) Hu's Expertise: SAP2000, ETABS, Python
-Yuqi (Grace) Hu's Graduation Date: N/A
-Yuqi (Grace) Hu's Email: yq.hu@mail.utoronto.ca
-Yuqi (Grace) Hu's Phone Number: 4373445793
-Yuqi (Grace) Hu's GPA: 3.85
-Yuqi (Grace) Hu's Work Experience: ['Rocscience']
-Yuqi (Grace) Hu's Projects: ['Rocscience – Geotechnical Intern', 'Seismic Design Team – Senior Structural Designer', 'Concrete Canoe Team – Hull & Structural Lead', 'Concrete Mix Design Research – Algorithm Team Member', 'Guangze No.1 Filling Station Green Building Assessment', 'Team Effectiveness Learning System (TELS) project – ESP II Team Leader']
-Yuqi (Grace) Hu's Skills: ['SAP2000', 'ETABS', 'Python', 'AutoCAD', 'SketchUp', 'MATLAB', 'Revit', 'eQUEST', 'Autodesk CFD', 'SoundPLAN', 'Autodesk Fusion 360', 'Java', 'Microsoft suite (Word, Excel, PowerPoint, Publisher)', 'ArcGIS', 'Settle3', 'PLAXIS 2D']
-
-Hongyu (Liam) Ma's Location: Calgary, Canada
-Hongyu (Liam) Ma's University: University of Toronto
-Hongyu (Liam) Ma's Degree: High Honours in Bachelor of Applied Science
-Hongyu (Liam) Ma's Major: Civil Engineering
-Hongyu (Liam) Ma's Expertise: Structural Engineering, Modelling and Analysis, Pipeline Engineering
-Hongyu (Liam) Ma's Graduation Date: 06/2021
-Hongyu (Liam) Ma's Email: MaL2K16@outlook.com
-Hongyu (Liam) Ma's Phone Number: 4039684717
-Hongyu (Liam) Ma's GPA: 3.6
-Hongyu (Liam) Ma's Work Experience: ['Pembina Pipeline Corporation, Technical Services Unit']
-Hongyu (Liam) Ma's Projects: ['University of Toronto Seismic Design Team', 'Capstone Project – Football Stadium Concept Design', 'Steel Building Frame Design Project']
-Hongyu (Liam) Ma's Skills: ['MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTeX', 'Python', 'Technical report writing', 'English and Mandarin speaker']
+Krishna Advait Sripada's Location: Toronto, Canada
+Krishna Advait Sripada's University: University of Toronto
+Krishna Advait Sripada's Degree: Bachelor of Applied Science: Computer Engineering
+Krishna Advait Sripada's Major: Computer Engineering
+Krishna Advait Sripada's Expertise: Programming, Data Structures & Algorithms, Project Management
+Krishna Advait Sripada's Graduation Date: N/A
+Krishna Advait Sripada's Email: krishna.sripada@mail.utoronto.ca
+Krishna Advait Sripada's Phone Number: 6476792419
+Krishna Advait Sripada's GPA: N/A
+Krishna Advait Sripada's Work Experience: ['UNIVERSITY OF TORONTO ROBOTICS ASSOCIATION (Autonomous Rover Team)']
+Krishna Advait Sripada's Projects: ['Wayfinder - Geographic Information System (GIS) software application (using C++)', 'Cricket Score Predictor | Python, PyTorch, Pandas, NumPy, Matplotlib', 'Mission: Critical | Game Development', 'Artificial Intelligence - Reversi']
+Krishna Advait Sripada's Skills: ['C++', 'Java', 'Python', 'SciPy', 'PyTorch', 'NumPy', 'HTML', 'JavaScript', 'MATLAB', 'Pandas', 'Problem-solving', 'Decision Making', 'Project Management', 'Leadership', 'Teamwork', 'Communication', 'Collaboration', 'Adaptability', 'Object Oriented Programming (OOPs)', 'Data Structures & Algorithms', 'ROS', 'Git', 'Github', 'API', 'SSH', 'Valgrind', 'UNIX', 'Bash', 'VS Code', 'NetBeans', 'Quartus', 'ModelSim', 'Simulink', 'CPULator', 'JRE', 'Arduino UNO']
 

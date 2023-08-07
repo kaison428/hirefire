@@ -209,6 +209,14 @@ PROJECT_ANSWER = {
     'End Date': '08/2020',
 }
 
+LIST_TO_DIRECT_PARSE = ['University', 'GPA', 'Email address', 'Phone Number', 'Degree', 'Major']
+
+DIRECT_PARSE_SYSTEM_MESSAGE = '''
+    You will be provided with unstructured data.
+    Your task is to parse it into JSON format with the following fields:
+''' + str(LIST_TO_DIRECT_PARSE)
+# --------------------------------------------------------------------------------
+
 RESUME_SAMPLE = '''
     Hongyu (Liam) Ma
     126 Cranarch Hts. SE – Calgary – Canada
