@@ -60,7 +60,7 @@ with zapier_container:
     st.markdown('**Zapier** allows you to automate email generation, scheduling and more! Get your API key [here](https://nla.zapier.com/docs/authentication/#api-key)!')
     st.markdown('_Note: Your API key will be deleted immediately once the webpage is refreshed._')
     st.session_state["zapier"] = False
-    user_zapier_api_key = st.text_input('Enter your Zapier API Key here first to enable the API functions', '')
+    user_zapier_api_key = st.text_input('Your must enter your Zapier API Key to use the full functionalities', '')
     if user_zapier_api_key:
         os.environ['ZAPIER_NLA_API_KEY'] = user_zapier_api_key
         st.session_state["zapier"] = True
