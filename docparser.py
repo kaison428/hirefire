@@ -20,6 +20,9 @@ from langchain.docstore.document import Document
 from langchain.chains.summarize import load_summarize_chain
 from langchain import PromptTemplate
 from langchain.chains.llm import LLMChain
+from langchain.output_parsers import StructuredOutputParser, ResponseSchema
+
+from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
 def get_database_from_resume(resumes, method='retrieval', summarize=True):
 
@@ -116,9 +119,14 @@ def get_complete_database(resume_database, raw_resumes):
 
     return complete_resume_database
 
-def parse_resume(llm, resume, resume_sample, question_schema, answer_data, prompt_template):
+def parse_resume(llm, resume, resume_sample, question_schema, answer_data, prompt_template, keys_to_skip=[]):
+    ''' one-shot query '''
     parsed_resume = {}
+
     for key in question_schema:
+        if key in keys_to_skip:
+            continue
+
         question = question_schema[key]
         answer_sample = answer_data[key]
         
@@ -132,6 +140,25 @@ def parse_resume(llm, resume, resume_sample, question_schema, answer_data, promp
         parsed_resume[key] = data
 
     return parsed_resume
+
+def direct_parse_resume(llm, resume, system_message, fields=[]):
+    # output parser --------------------------------
+    response_schemas = [ResponseSchema(name=field, description=field) for field in fields]
+    output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+    
+    # llm parser --------------------------------
+    messages = [
+        SystemMessage(
+            content=system_message + str(fields)
+        ),
+        HumanMessage(
+            content=resume
+        ),
+    ]
+
+    output = llm(messages).content
+
+    return output_parser.parse(output)
 
 def parse_resume_from_retrieval(retrieval_chain, question_schema, answer_data, prompt_template):
     parsed_resume = {}
