@@ -15,7 +15,7 @@ from langchain.docstore.document import Document
 
 from langchain.chains import RetrievalQA, LLMChain, SequentialChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
+from langchain.embeddings import OpenAIEmbeddings, HuggingFaceBgeEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.agents.agent_toolkits import ZapierToolkit
 from langchain.utilities.zapier import ZapierNLAWrapper
@@ -60,8 +60,17 @@ def get_text_from_pdf(fileobj):
     return combined_text
 
 @st.cache_resource
-def load_instruct():
-    return HuggingFaceInstructEmbeddings()
+def load_embeddings():
+    model_name = "BAAI/bge-small-en"
+    model_kwargs = {'device': 'cpu'}
+    encode_kwargs = {'normalize_embeddings': False}
+    hf = HuggingFaceBgeEmbeddings(
+        model_name=model_name,
+        model_kwargs=model_kwargs,
+        encode_kwargs=encode_kwargs
+    )
+
+    return hf
 
 # LangChain --------------------------------
 def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
@@ -93,7 +102,7 @@ def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
     if embedding_type == 'OpenAI':
         embeddings = OpenAIEmbeddings()
     else:
-        embeddings = load_instruct()
+        embeddings = load_embeddings()
 
     vectorstore = Chroma.from_documents(docs, embeddings, collection_name="resume_database")
 
