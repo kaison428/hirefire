@@ -67,7 +67,7 @@ QUESTION_SCHEMA = {
     ''',
 
     'Skills': '''
-        List all the skills the candidate possess.
+        List all the skills the candidate possesses, including all skills mentioned under the work experience and projects sections.
         Output the skills as a comma-separated Python list.
         If this is not found, output an empty Python list.
     ''',
@@ -103,7 +103,7 @@ ANSWER_DATA = {
     ''',
 
     'Skills': '''
-         ['MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
+         ['S-Steel', 'S-Concrete', 'AutoCAD', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3', 'Pipeline Bending Strain Analysis', 'MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
     ''',
 }
 # ----------------------------------------------------------------
