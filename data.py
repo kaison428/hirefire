@@ -38,13 +38,12 @@ QUESTION_SCHEMA = {
     ''',
 
     'Email': '''
-        Provide the complete email address of the candidate.
-        Example answer: siukai.cheung@mail.utoronto.ca
+        Provide the complete email address of the candidate in this format: {Email Address}
         If this is not found, output N/A.
     ''',
 
     'Phone Number': '''
-        Provide the phone number of the candidate. 
+        Provide the phone number of the candidate in this format: {Phone number}
         The output should only contain numbers. Remove any symbols and spaces.
         Example answer: 4379706389
         If this is not found, output N/A.

@@ -303,7 +303,7 @@ def get_combined_text(resumes, add_name=False):
         vectorstore = Chroma.from_documents(splits, embeddings, collection_name=f'candiate{i}')
 
         retrieval_chain = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 1})
+            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
         )
 
         # create vectorstore for retrieval --------------------------------
