@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_chat import message
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
+import time
 
 from model import *
 from data import  *
@@ -83,7 +84,7 @@ def get_agent_from_data(files):
         resumes.append(get_text_from_pdf(file))
 
     # 2. Build an agent from the database
-    overall_chain, agent, df_database = get_agent(resumes, use_zapier=st.session_state["zapier"], embedding_type='InstructXL')
+    overall_chain, agent, df_database = get_agent(resumes, embedding_type='InstructXL')
     return overall_chain, agent, df_database
 
 if process_button:
@@ -93,7 +94,9 @@ if process_button:
         st.error("Please upload at least one document!")
     else:
         with st.spinner('Processing... It will take a while...'):
+            start_time = time.time()
             st.session_state["process_chain"], st.session_state["agent"], st.session_state["dataframe"] = get_agent_from_data(files)
+            print(time.time() - start_time)
 
         st.success('Done!')
         st.session_state["submit"] = True
@@ -101,7 +104,8 @@ if process_button:
 # Statistics ----------------------------------------------------------------
 with stats_container:
     if st.session_state.get("submit"):
-        st.dataframe(st.session_state["dataframe"])
+        if not st.session_state["dataframe"].empty:
+            st.dataframe(st.session_state["dataframe"])
 
 # Chatbot GUI ----------------------------------------------------------------
 with chat_container:

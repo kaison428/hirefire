@@ -5,6 +5,8 @@ from data import *
 
 import pandas as pd
 
+import streamlit as st
+
 import ast
 import copy
 
@@ -255,3 +257,43 @@ def get_df_from_json(database):
             database_dict[field].append(person_info[field])
 
     return pd.DataFrame(database_dict)
+
+def get_combined_text(resumes):
+    # define llm --------------------------------
+    llm = ChatOpenAI(temperature=0)
+
+    # clean up resume text --------------------
+    prompt_template = """Remove all the 1) useless characters and terms and 2) remove specific work experience/project description from the resume. Return a cleaned version:
+    "{text}"
+    CLEANED RESUME:"""
+    prompt = PromptTemplate.from_template(prompt_template)
+    llm = ChatOpenAI(temperature=0)
+    summarize_chain = LLMChain(llm=llm, prompt=prompt)
+    resume_sample_local = summarize_chain.run(RESUME_SAMPLE)
+
+    # set up ----------------------------------------------------------------
+    all_resume_text = ''
+    status_bar = st.progress(0, text='Parsing resume...')
+
+    for i, resume in enumerate(resumes):
+        print(f'Parsing {i}')
+        resume = summarize_chain.run(resume)
+
+        # split text --------------------------------
+        template = ChatPromptTemplate.from_messages([
+            ("system", DIRECT_PARSE_SYSTEM_MESSAGE),
+            ("human", DIRECT_PARSE_TEMPLATE),
+        ])
+
+        messages = template.format_messages(
+            resume_sample=resume_sample_local,
+            resume_sample_output=DIRECT_PARSE_ANSWER,
+            resume=resume,
+        )
+
+        all_resume_text += llm(messages).content
+        all_resume_text += '\n\n'
+
+        status_bar.progress(int((i+1)/len(resumes)*100), text='Parsing resume...')
+
+    return all_resume_text

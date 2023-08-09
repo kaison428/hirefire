@@ -73,14 +73,19 @@ def load_embeddings():
     return hf
 
 # LangChain --------------------------------
-def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
+def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
 
     # 1. construct database
-    resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='non-retrieval', summarize=True)
-    # resume_database = get_complete_database(resume_database, raw_resumes)
+    if parse_method == 'query':
+        resume_database, raw_resumes, retrieval_chains = get_database_from_resume(resumes, method='non-retrieval', summarize=True)
+        # resume_database = get_complete_database(resume_database, raw_resumes)
 
-    resume_database_text = get_text_from_json(resume_database)
-    resume_database_df = get_df_from_json(resume_database)
+        resume_database_text = get_text_from_json(resume_database)
+        resume_database_df = get_df_from_json(resume_database)
+
+    elif parse_method == 'one_shot':
+        resume_database_text = get_combined_text(resumes)
+        resume_database_df = pd.DataFrame()
 
     # ----------------------------------------------------------------
     # save it for inspection
@@ -93,7 +98,7 @@ def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
         resume_database_text = f.read()
     # ----------------------------------------------------------------
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=0)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=0)
     splits = text_splitter.split_text(resume_database_text)
 
     docs = [Document(page_content=t) for t in splits[:]]
@@ -121,10 +126,9 @@ def get_agent(resumes, use_zapier=False, embedding_type='OpenAI'):
         ),
     ]
 
-    if use_zapier:
-        zapier = ZapierNLAWrapper()
-        zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier).get_tools()
-        tools += zapier_toolkit
+    zapier = ZapierNLAWrapper()
+    zapier_toolkit = ZapierToolkit.from_zapier_nla_wrapper(zapier).get_tools()
+    tools += zapier_toolkit
 
     # 3. set up agent --------------------------------
     llm = ChatOpenAI(temperature=0, model='gpt-4')

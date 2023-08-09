@@ -137,7 +137,6 @@ TEMPLATE_STRING_ZERO_SHOT = '''
 
     ```{answer}```
 '''
-
 # ----------------------------------------------------------------
 # Create an sample QnA for work and project related information
 WORK_EXPERIENCE_SCHEMA = {
@@ -209,12 +208,55 @@ PROJECT_ANSWER = {
     'End Date': '08/2020',
 }
 
-LIST_TO_DIRECT_PARSE = ['University', 'GPA', 'Email', 'Phone Number', 'Degree', 'Major']
+#--------------------------------------------------
 
 DIRECT_PARSE_SYSTEM_MESSAGE = '''
     You will be provided with unstructured data.
-    Your task is to parse it into JSON format with the following fields:
+    Your task is to parse it into a structured text format in the following format:
+    <Person's Name> <Field Name>: <Content>
 '''
+DIRECT_PARSE_ANSWER = '''
+Hongyu (Liam) Ma Location: Toronto, Canada
+Hongyu (Liam) Ma University': University of Toronto
+Hongyu (Liam) Ma Degree': 'Bachelor of Applied Science',
+Hongyu (Liam) Ma Major': 'Civil Engineering',
+Hongyu (Liam) Ma Expertise': 'Pipeline Engineering, Structural Engineering, Modelling and Analysis',
+Hongyu (Liam) Ma Graduation Date': '06/2021',
+Hongyu (Liam) Ma Email': 'MaL2K16@outlook.com',
+Hongyu (Liam) Ma Phone Number': '4039684717',
+Hongyu (Liam) Ma GPA': '3.5',
+Hongyu (Liam) Ma Work Experience': [
+        'Pembina Pipeline Corporation, Technical Services Unit': [
+            Hongyu (Liam) Ma Skills: ['Pipeline bending strain analysis']
+        ]
+    ]
+Hongyu (Liam) Ma Projects': [
+        'University of Toronto Seismic Design Team': [
+            Hongyu (Liam) Ma Skills: ['S-Frame', 'SAP2000', 'MATLAB', 'Python']
+        ],
+        'Capstone Project - Football Stadium Concept Design': [
+            Hongyu (Liam) Ma Skills: ['AutoCAD', 'S-Frame', 'S-Steel', 'S-Concrete', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3']
+        ],
+        'Steel Building Frame Design Project': [
+            Hongyu (Liam) Ma Skills: ['S-Frame', 'NBCC 2015', 'CSA S16-14', 'NBCC 2015']
+        ],
+    ]
+Hongyu (Liam) Ma Skills':['S-Steel', 'S-Concrete', 'AutoCAD', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3', 'Pipeline Bending Strain Analysis', 'MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
+'''
+
+DIRECT_PARSE_TEMPLATE = '''
+Unstructured Data Input:
+{resume_sample}
+
+Structured Data Output:
+{resume_sample_output}
+
+Unstructured Data Input:
+{resume}
+
+Structured Data Output:
+'''
+
 # --------------------------------------------------------------------------------
 
 RESUME_SAMPLE = '''

@@ -1,15 +1,479 @@
-List of candidates:Krishna Advait Sripada,
+Vaibhav Logar Phone Number: 9057823578
+Vaibhav Logar Email: vaibhavlogar.vl@gmail.com
+Vaibhav Logar Skills: ['Python', 'Advanced Excel', 'Power BI', 'SQL', 'Flutter', 'Bubble.io', 'Microsoft Office', 'Canvas', 'Agile', 'Wix', 'Wordpress', 'Tensorflow', 'NLP', 'Spacy', 'Pandas', 'Scikit-learn', 'LLM integration', 'Sentiment analysis', 'Semantic search', 'Keras']
+Vaibhav Logar Education: University of Toronto, Bachelor of Business Administration (International Scholar), Management and International Business program (MIB) with Data Science minor, Sep 2021-Present
+Vaibhav Logar Work Experience: 
+- CO-FOUNDER | MHAPY (MENTAL HEALTH PLATFORM WITH CHATBOT), Sep 2022-May 2023
+- BUSINESS DEVELOPMENT EXECUTIVE | LEAPON., Aug 2022-Dec 2022
+- EASYFIN | INNOVATIVE PROJECTS MANAGER. (Promotion), May 2021-May 2022
+- EASYFIN | INVESTMENT BANKING INTERN., May 2020-May 2021
+- LOW CALORIE ICE CREAM STARTUP | CEO., Jan 2022-May 2022
+- SOCIOTECH STARTUP | CEO, Jan 2021-Aug 2021
+- "HOW TO START A VENTURE" WORKSHOP | EVENT MANAGER, April 2021-June 2021
+Vaibhav Logar Extra-curriculars: AUTHOR OF "WAR OF 24TH CENTURY", May 2021-Dec 2021
 
-Krishna Advait Sripada's Location: Toronto, Canada
-Krishna Advait Sripada's University: University of Toronto
-Krishna Advait Sripada's Degree: Bachelor of Applied Science: Computer Engineering
-Krishna Advait Sripada's Major: Computer Engineering
-Krishna Advait Sripada's Expertise: Programming, Data Structures & Algorithms, Project Management
-Krishna Advait Sripada's Graduation Date: N/A
-Krishna Advait Sripada's Email: krishna.sripada@mail.utoronto.ca
-Krishna Advait Sripada's Phone Number: 6476792419
-Krishna Advait Sripada's GPA: N/A
-Krishna Advait Sripada's Work Experience: ['UNIVERSITY OF TORONTO ROBOTICS ASSOCIATION (Autonomous Rover Team)']
-Krishna Advait Sripada's Projects: ['Wayfinder - Geographic Information System (GIS) software application (using C++)', 'Cricket Score Predictor | Python, PyTorch, Pandas, NumPy, Matplotlib', 'Mission: Critical | Game Development', 'Artificial Intelligence - Reversi']
-Krishna Advait Sripada's Skills: ['C++', 'Java', 'Python', 'SciPy', 'PyTorch', 'NumPy', 'HTML', 'JavaScript', 'MATLAB', 'Pandas', 'Problem-solving', 'Decision Making', 'Project Management', 'Leadership', 'Teamwork', 'Communication', 'Collaboration', 'Adaptability', 'Object Oriented Programming (OOPs)', 'Data Structures & Algorithms', 'ROS', 'Git', 'Github', 'API', 'SSH', 'Valgrind', 'UNIX', 'Bash', 'VS Code', 'NetBeans', 'Quartus', 'ModelSim', 'Simulink', 'CPULator', 'JRE', 'Arduino UNO']
+Alexander Philip Tarek Massin Location: Toronto, Canada
+Alexander Philip Tarek Massin University': Ryerson University
+Alexander Philip Tarek Massin Degree': 'B.Sc. (Hons.) Computer Science',
+Alexander Philip Tarek Massin Graduation Date': '04/2022',
+Alexander Philip Tarek Massin Email': 'amassin@ryerson.ca',
+Alexander Philip Tarek Massin Phone Number': '4168942836',
+Alexander Philip Tarek Massin Skills': [
+    'Java', 'Python', 'SQL', 'TypeScript', 'C#', 'C++', 'JavaScript', 'Ruby', 'C',
+    'Angular', 'React', 'Node.js', '.NET', 'Express.js', 'Ruby On Rails',
+    'Sequelize', 'Discord.py', 'Javacord', 'NumPy', 'Pandas', 'Flying Saucer'
+],
+Alexander Philip Tarek Massin Work Experience': [
+    'Royal Bank of Canada': [
+        Alexander Philip Tarek Massin Skills: ['Software Development']
+    ],
+    'Ontario Government - MGCS': [
+        Alexander Philip Tarek Massin Skills: ['Full Stack Development']
+    ],
+    'Verto Inc.': [
+        Alexander Philip Tarek Massin Skills: ['Full Stack Development']
+    ],
+    'Optimity Inc': [
+        Alexander Philip Tarek Massin Skills: ['Full Stack Development']
+    ]
+],
+Alexander Philip Tarek Massin Projects': [
+    'Imperial Caps - Marketplace Application': [
+        Alexander Philip Tarek Massin Skills: ['React.js', 'Express.js', 'Git', 'Digital Ocean', 'Semantic UI']
+    ],
+    'Discord Bot Application': [
+        Alexander Philip Tarek Massin Skills: ['Python', 'Java']
+    ]
+],
+Alexander Philip Tarek Massin Awards': [
+    'Highest GPA Second Year Computer Science Ryerson University',
+    'Alumni Award Ryerson University'
+]
+
+Yuqi (Grace) Hu Location: Toronto, Canada
+Yuqi (Grace) Hu University': University of Toronto
+Yuqi (Grace) Hu Degree': 'Bachelor of Applied Science',
+Yuqi (Grace) Hu Major': 'Civil Engineering',
+Yuqi (Grace) Hu Expertise': 'Geotechnical Engineering, Structural Engineering, Concrete Design',
+Yuqi (Grace) Hu Graduation Date': '04/2024',
+Yuqi (Grace) Hu Email': 'yq.hu@mail.utoronto.ca',
+Yuqi (Grace) Hu Phone Number': '4373445793',
+Yuqi (Grace) Hu GPA': '3.85',
+Yuqi (Grace) Hu Work Experience': [
+        'Rocscience': [
+            Yuqi (Grace) Hu Skills: ['Geotechnical Engineering']
+        ],
+        'Seismic Design Team': [
+            Yuqi (Grace) Hu Skills: ['Structural Design']
+        ],
+        'Concrete Canoe Team': [
+            Yuqi (Grace) Hu Skills: ['Hull Design', 'Structural Design']
+        ],
+        'Concrete Mix Design Research': [
+            Yuqi (Grace) Hu Skills: ['Algorithm Development']
+        ],
+        'Guangze No.1 Filling Station Green Building Assessment': [
+            Yuqi (Grace) Hu Skills: ['Green Building Assessment']
+        ],
+        'Team Effectiveness Learning System (TELS) project': [
+            Yuqi (Grace) Hu Skills: ['Team Leadership']
+        ]
+    ]
+Yuqi (Grace) Hu Skills':['SAP2000', 'ETABS', 'Python', 'AutoCAD', 'SketchUp', 'MATLAB', 'Revit', 'eQUEST', 'Autodesk CFD', 'SoundPLAN', 'Autodesk Fusion 360', 'Java', 'Microsoft suite (Word, Excel, PowerPoint, Publisher)', 'ArcGIS', 'Settle3', 'PLAXIS 2D']
+
+Hongyu (Liam) Ma Location: Calgary, Canada
+Hongyu (Liam) Ma University': University of Toronto
+Hongyu (Liam) Ma Degree': 'Bachelor of Applied Science',
+Hongyu (Liam) Ma Major': 'Civil Engineering',
+Hongyu (Liam) Ma Expertise': 'Pipeline Engineering, Structural Engineering, Modelling and Analysis',
+Hongyu (Liam) Ma Graduation Date': '06/2021',
+Hongyu (Liam) Ma Email': 'MaL2K16@outlook.com',
+Hongyu (Liam) Ma Phone Number': '4039684717',
+Hongyu (Liam) Ma GPA': '3.6',
+Hongyu (Liam) Ma Work Experience': [
+        'Pembina Pipeline Corporation, Technical Services Unit': [
+            Hongyu (Liam) Ma Skills: ['Pipeline bending strain analysis']
+        ]
+    ]
+Hongyu (Liam) Ma Projects': [
+        'University of Toronto Seismic Design Team': [
+            Hongyu (Liam) Ma Skills: ['S-Frame', 'SAP2000', 'MATLAB', 'Python']
+        ],
+        'Capstone Project - Football Stadium Concept Design': [
+            Hongyu (Liam) Ma Skills: ['AutoCAD', 'S-Frame', 'S-Steel', 'S-Concrete', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3']
+        ],
+        'Steel Building Frame Design Project': [
+            Hongyu (Liam) Ma Skills: ['S-Frame', 'NBCC 2015', 'CSA S16-14', 'NBCC 2015']
+        ],
+    ]
+Hongyu (Liam) Ma Skills':['S-Steel', 'S-Concrete', 'AutoCAD', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3', 'Pipeline Bending Strain Analysis', 'MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
+
+MAHER ABSAR Location: Toronto, Canada
+MAHER ABSAR University': University of Toronto
+MAHER ABSAR Degree': 'BASC in Civil Engineering',
+MAHER ABSAR Minor': 'Engineering Business',
+MAHER ABSAR Expertise': 'Structural Engineering, Reinforced Concrete Design, Steel Design, Construction Management',
+MAHER ABSAR Graduation Date': '04/2022',
+MAHER ABSAR Email': 'maher.absar@mail.utoronto.ca',
+MAHER ABSAR Phone Number': '4167001570',
+MAHER ABSAR GPA': '3.5',
+MAHER ABSAR Work Experience': [
+        'Toronto Hydro': [
+            MAHER ABSAR Skills: ['Excel', 'VBA', 'Project Tracking', 'Geospatial Information System (GEAR)', 'CAD Drawings', 'MicroStation']
+        ],
+        'University of Toronto': [
+            MAHER ABSAR Skills: ['CAD Drawings', 'MATLAB', 'SolidWorks', 'Abaqus Finite Element Analysis']
+        ]
+    ]
+MAHER ABSAR Projects': [
+        'Seismic Design Team, University of Toronto': [
+            MAHER ABSAR Skills: ['SAP2000', 'Revit', 'Python', 'MATLAB']
+        ]
+    ]
+MAHER ABSAR Skills':['Excel', 'VBA', 'Project Tracking', 'Geospatial Information System (GEAR)', 'CAD Drawings', 'MicroStation', 'MATLAB', 'SolidWorks', 'Abaqus Finite Element Analysis', 'SAP2000', 'Revit', 'Python', 'HTML', 'CSS', 'AutoCAD', 'Microsoft Office', 'SketchUp', 'Altair HyperWorks', 'ETABS']
+
+
+MAHER ABSAR Languages':['English', 'Bengali', 'Hindi', 'Urdu']
+MAHER ABSAR Interests':['Soccer', 'Basketball', 'Cricket', 'MMA', 'Biking', 'Travel', 'Documentaries', 'Investing']
+
+Siu Kai Cheung Location: Toronto, Canada
+Siu Kai Cheung University': University of Toronto
+Siu Kai Cheung Degree': 'Bachelor of Applied Science',
+Siu Kai Cheung Major': 'Civil Engineering',
+Siu Kai Cheung Expertise': 'Artificial Intelligence Engineering, Engineering Business',
+Siu Kai Cheung Graduation Date': '06/2023',
+Siu Kai Cheung Email': 'siukai.cheung@mail.utoronto.ca',
+Siu Kai Cheung Phone Number': '+14379706389',
+Siu Kai Cheung GPA': '3.82',
+Siu Kai Cheung Work Experience': [
+        'Toronto Transit Commission (TTC)': [
+            Siu Kai Cheung Skills: ['Track and Structure Engineering']
+        ],
+        'Rocscience Inc.': [
+            Siu Kai Cheung Skills: ['Geotechnical Software Development']
+        ]
+    ]
+Siu Kai Cheung Projects': [
+        'ML-based Geotechnical Data Reconstruction': [
+            Siu Kai Cheung Skills: ['Python', 'Machine Learning', 'Data Science']
+        ],
+        'Credit Rating Model': [
+            Siu Kai Cheung Skills: ['Python', 'Data Science', 'Machine Learning']
+        ],
+        'EasyFigs - Figure Detection in PDFs': [
+            Siu Kai Cheung Skills: ['Python', 'Data Science']
+        ]
+    ]
+Siu Kai Cheung Skills':['Python', 'C++', 'Pandas', 'NumPy', 'PyTorch', 'PyQt', 'scikit-learn', 'JavaScript', 'HTML', 'CSS', 'Vue.js', 'Node.js']
+
+Stephanie Lee Location: Toronto, Canada
+Stephanie Lee Phone Number: 6472935413 (CA)/ +852 67646843(HK)
+Stephanie Lee Email: tszching.lee@ryerson.ca
+Stephanie Lee Skills: ['WordPress', 'Adobe Illustrator', 'Adobe Photoshop', 'Social Media Channel', 'HTML', 'UX Design', 'Airtable', 'Microsoft PowerPoint', 'Microsoft Excel', 'Microsoft Office Word', 'Python']
+Stephanie Lee Languages: ['Cantonese', 'Mandarin', 'English']
+Stephanie Lee Profile: 'Multilingual, communicative, eager-to-learn Hospitality and Tourism Management student with several work experiences especially in a tech startup company, 3 years of marketing, social media management, graphic design, and data analysis experiences.'
+Stephanie Lee Employment History: [
+    'Marketing Intern at iContribute, Ottawa': [
+        Stephanie Lee Skills: ['Marketing', 'Social Media Management', 'Graphic Design', 'Data Analysis']
+    ],
+    'Social Media Manager at Ryerson Hospitality and Tourism Students' Society, Toronto': [
+        Stephanie Lee Skills: ['Social Media Management']
+    ],
+    'Marketing and Promotion Specialist at ISX Toronto, Toronto': [
+        Stephanie Lee Skills: ['Marketing', 'Promotion']
+    ]
+]
+Stephanie Lee Education: 'Bachelor of Commerce, Ryerson University, Toronto'
+Stephanie Lee Courses: ['Hospitality Information System', 'Business Statistics', 'Marketing Principles', 'Advertising and Promotion']
+Stephanie Lee Awards and Achievements: [
+    '2020 Baxter Student Ambassador Program, Runner-up, Toronto',
+    'Ryerson Hospitality Alumni Association (RHAA) Green Award, Recipient, Toronto'
+]
+
+Shirley Zhang Location: Palo Alto, CA
+Shirley Zhang University': 'Stanford University'
+Shirley Zhang Degree': 'Master of Science in Civil Engineering'
+Shirley Zhang Major': 'Sustainable Urban Systems'
+Shirley Zhang Graduation Date': '03/2024'
+Shirley Zhang Email': 'ssczhang@stanford.edu'
+Shirley Zhang Phone Number': '+16505196767'
+Shirley Zhang GPA': '3.95'
+Shirley Zhang Work Experience': [
+        'Stanford University, Energy Operations Department': [
+            Shirley Zhang Skills: ['Data Science Engineering']
+        ],
+        'Terrestrial Energy Inc.': [
+            Shirley Zhang Skills: ['Civil Engineering', 'Nuclear Engineering']
+        ],
+        'Arup Group': [
+            Shirley Zhang Skills: ['Structural Engineering']
+        ],
+        'Rocscience Inc.': [
+            Shirley Zhang Skills: ['Software Development']
+        ]
+    ]
+Shirley Zhang Projects': [
+        'Kore Geosystems': [
+            Shirley Zhang Skills: ['Geological Image Segmentation', 'Computer Vision']
+        ],
+        'Modern Niagara Group': [
+            Shirley Zhang Skills: ['Predictive Maintenance', 'HVAC Systems']
+        ]
+    ]
+Shirley Zhang Skills':['Python', 'MATLAB', 'C++', 'SQL', 'R', 'C#', 'HTML/CSS', 'JavaScript', 'Java', 'Excel VBA', 'PyTorch', 'Tensorflow', 'Pandas', 'Numpy', 'Scikit-learn', 'Jupyter', 'Qt', 'Flask', 'AWS', 'Docker']
+
+Hailin Wang Location: Toronto, Ontario, Canada
+Hailin Wang Phone Number: 9053256819
+Hailin Wang Email: hailinwang2000@hotmail.com
+Hailin Wang LinkedIn: https://www.linkedin.com/in/hailin-wang/
+Hailin Wang Website: http://hailinlwang.github.io/
+Hailin Wang University: University of Toronto
+Hailin Wang Degree: Bachelor of Applied Science in Engineering Science
+Hailin Wang Graduation Date: 04/2023
+Hailin Wang Major: Robotics Engineering
+Hailin Wang Minor: Business and Finance
+Hailin Wang GPA: 3.68
+Hailin Wang Clubs: You're Next Career Network, Engineering Sports Association, IEEE Toronto Branch
+Hailin Wang Relevant Coursework: Computer Algorithms and Data Structures, Operating Systems, Digital and Computer Systems
+Hailin Wang Work Experience: 
+    'AnalogX - Rambus': [
+        Hailin Wang Job Title: IC Hardware Engineer
+        Hailin Wang Location: Toronto, Ontario
+        Hailin Wang Employment Period: 05/2021 - 09/2022
+        Hailin Wang Responsibilities: 
+            - Designed SERDES integrated circuit using Verilog
+            - Managed integration of IP across digital, analog, and verification teams
+            - Led digital integration and verification efforts
+            - Optimized chip level design and layout workflow
+            - Introduced hardware optimization feature using FEC encoding
+    ],
+    'Fidelity Investments': [
+        Hailin Wang Job Title: Data Warehouse Consultant
+        Hailin Wang Location: Toronto, Ontario
+        Hailin Wang Employment Period: 09/2022 - present
+        Hailin Wang Responsibilities: 
+            - Productionized ML models using AWS S3, EC2, and batch jobs
+            - Conducted EDA on Datawarehouse using Snowflake Snowpark and SQL
+    ],
+    'Rocscience Inc': [
+        Hailin Wang Job Title: Software Developer
+        Hailin Wang Location: Toronto, Ontario
+        Hailin Wang Employment Period: 05/2020 - 08/2020
+        Hailin Wang Responsibilities: 
+            - Drove leading project development for tripling 3-feature annotation toolset
+            - Implemented UX/UI features using C# and .NET
+            - Refactored library of 200+ files using Visual Studio and git
+    ],
+    'Haver and Boecker': [
+        Hailin Wang Job Title: Electromechanical Technician
+        Hailin Wang Location: North-Rhine-Westphalia, Germany
+        Hailin Wang Employment Period: 05/2019 - 08/2019
+        Hailin Wang Responsibilities: 
+            - Redesigned CAM programming tools
+            - Assembled pneumatic systems for industrial machinery
+            - Expanded warehouse storage capabilities
+    ]
+Hailin Wang Leadership: 
+    'You're Next Career Network': [
+        Hailin Wang Job Title: Operations & Logistics Associate
+        Hailin Wang Location: Toronto, Ontario
+        Hailin Wang Employment Period: 04/2021 - present
+        Hailin Wang Responsibilities: 
+            - Facilitated planning and execution of bi-annual career fair events
+            - Managed key industry partnerships
+            - Led career workshops
+    ]
+Hailin Wang Technical Skills: Verilog, Cadence, Synopsys VCS, C#, C++, Python, MATLAB, AutoCAD, ARM Assembly, HTML/CSS, JavaScript
+Hailin Wang Interests: Rowing, Basketball, Cooking and Eating new foods, English, French, Chinese, Learning Spanish
+
+Henry Tu Name: Henry Tu
+Henry Tu Email: hello@henrytu.me
+Henry Tu Website: henrytu.me
+Henry Tu GitHub: github.com/henrytwo
+Henry Tu LinkedIn: linkedin.com/in/henry-tu
+Henry Tu Education: 
+    University: University of Toronto
+    Degree: Computer Science
+    GPA: 3.94/4.0
+    Graduation Date: April 2024
+Henry Tu Work Experience: 
+    Amazon: 
+        Position: Software Development Engineer Intern
+        Location: Vancouver, BC
+        Dates: May 2023 - Aug 2023
+    Cerebras Systems: 
+        Position: ML Frameworks Software Engineer
+        Location: Toronto, ON
+        Dates: May 2021 - Aug 2022
+    University of Toronto: 
+        Position: Full Stack Developer
+        Location: Toronto, ON
+        Dates: Mar 2020 - Jan 2021
+Henry Tu Projects: 
+    LingoVision: 
+        Technologies: Python, Firebase, Google Cloud, DeepL
+        Description: Translator
+        Demo: GitHub
+        Date: Sep 2022
+    Cube Factor Authentication: 
+        Technologies: Python, OpenCV, Firebase, Raspberry Pi
+        Description: Demo
+        Demo: GitHub
+        Date: Sep 2018
+    InterNAV: 
+        Technologies: Python, Firebase, Airodump-ng
+        Description: Demo
+        Demo: GitHub
+        Date: Sep 2019
+Henry Tu Leadership Experience: 
+    Hack the 6ix: 
+        Position: Board Member (Prev. Co-Chair & Web Director)
+        Location: Toronto, ON
+        Dates: Jan 2020 - Present
+Henry Tu Technical Skills: 
+    Frontend: HTML, CSS, Vue.js, React, Material-UI
+    Backend: Node.js, Express.js, MongoDB, SQL
+    Languages: Python, Java, TypeScript, C, C++
+    Hardware: Raspberry Pi, Arduino, 3D Printing
+    Machine Learning: PyTorch, Numpy, Colab, MLIR
+    Technologies: Linux, Cloudflare, Firebase, OpenCV
+    Tools & Utilities: Pytest, Jest, CI/CD, Docker, Regex, Pybind, Protocol Buffers
+
+J Tarak Ram Name: J Tarak Ram
+J Tarak Ram Email: bjujjurutarakram1818@gmail.com
+J Tarak Ram LinkedIn: linkedin.com/in/tarakram18
+J Tarak Ram GitHub: github.com/JTarakRam
+J Tarak Ram Professional Summary: Passionate and dedicated Machine Learning Engineer with a thirst for knowledge and a creative mindset. Experienced in developing recommendation systems, classification models, and regression models. Collaborative team player who enjoys working with industry professionals to create innovative solutions.
+J Tarak Ram Work Experience: 
+- B Human.AI: Machine Learning Engineer Intern (May 2023 - Present)
+- Antern: Machine Learning Engineer (Nov 2022 - May 2023)
+- ML Hub: Founder, Machine Learning Instructor (Jan 2023 - Present)
+- Start Tech Academy: Data Analyst Intern (Aug 2022 - Sep 2022)
+J Tarak Ram Projects: 
+- Chatbot
+- Recommendation Systems
+- Regression
+- Classification
+J Tarak Ram Skills: 
+- Python
+- Excel
+- MLOps
+- Docker
+- LLMs
+- Statistical Analysis
+- NLP
+- Machine Learning
+- Data Visualization
+- Strong problem-solving and analytical skills
+J Tarak Ram Education: Andhra Loyola College (Bachelor of Arts, 2019 - 2022)
+
+Parthiv Varma Location: Toronto, ON
+Parthiv Varma Phone Number: (437) 533-7015
+Parthiv Varma Email: parthiv.varma@mail.utoronto.ca
+Parthiv Varma Skills: ['C/C++', 'Python', 'Flask', 'HTML', 'CSS', 'Git', 'GitHub', 'UNIX', 'MATLAB', 'Verilog', 'Intel Quartus Prime']
+Parthiv Varma University: University of Toronto
+Parthiv Varma Degree: Bachelor of Applied Science and Engineering (B.A.Sc) in Computer Engineering + PEY Co-op
+Parthiv Varma Graduation Date: 04/2026
+Parthiv Varma Education: [
+    'University of Toronto, Toronto, ON': [
+        Parthiv Varma Skills: ['C', 'C++', 'Digital Systems', 'Engineering Strategies & Practice']
+    ]
+]
+Parthiv Varma Projects: [
+    'Notes Website - Personal Project - December 2022': [
+        Parthiv Varma Skills: ['Flask', 'Python', 'HTML', 'CSS']
+    ],
+    'Reversi Artificial Intelligence - Computer Fundamentals (in C) - April 2022': [
+        Parthiv Varma Skills: ['C']
+    ],
+    'Verilog Projects - Digital Systems - September 2022 - December 2022': [
+        Parthiv Varma Skills: ['Verilog']
+    ]
+]
+Parthiv Varma Work Experience: [
+    'University of Toronto Robotics Association (UTRA) - September 2022 - Present': [
+        Parthiv Varma Skills: ['ROS', 'Git', 'GitHub']
+    ],
+    'Itron India - December 2020 - January 2021': [
+        Parthiv Varma Skills: ['Software Testing', 'Software Development']
+    ]
+]
+Parthiv Varma Awards and Extra-curriculars: [
+    'Electrical and Computer Engineering (ECE) Ambassador - September 2022 - Present',
+    'PaperTrails - January 2022'
+]
+
+Parinita Edke Email: parinita.edke@mail.utoronto.ca
+Parinita Edke Education: 
+- M.Sc., University of Toronto, Computer Science, Supervisor: Dr. Anna Goldenberg, cGPA: 3.93/4.0
+- HBSc., University of Toronto, Computer Science Specialist, Statistics Minor, Honors with High Distinction, cGPA: 3.92/4.0
+Parinita Edke Affiliations: 
+- Vector Institute (2022-present)
+- The Hospital for Sick Children, Genetics and Genome Biology (2021-present)
+- University of Toronto, Department of Computer Science (2018-present)
+Parinita Edke Positions: 
+- Research Student at Dr. Anna Goldenberg’s lab, The Hospital for Sick Children, Toronto, ON (2021-present)
+- Research Student at Dr. Pascal Tyrrell’s lab, University of Toronto, Toronto, ON (2020-2021)
+- Software Developer, Bank of Montreal, Toronto, ON (2020)
+- Research Volunteer at Dr. Laurent Brochard’s lab, St. Michael’s Hospital, Toronto, ON (2019)
+Parinita Edke Scholarships and Awards: 
+- DCS Graduate Entrance Scholarship ($10,000) (2022)
+- University of Toronto Student Leadership Award (2022)
+- New College Student Leadership Award (2022)
+- Lillian Waddell In-Course Scholarship ($1,250) (2022)
+- Lunenfeld Summer Studentship Scholarship ($2,000) (2021)
+- NSERC Undergraduate Student Research Award (Granted but declined due to Lunenfeld scholarship at SickKids) (2021)
+- New College Student Council In-Course Scholarship ($1,500) (2021)
+- Dean’s List Scholar (2020-2022)
+- James A. Priestly Admission Scholarship ($1,000) (2018)
+- New College Student Council Admission Scholarship ($1,000) (2018)
+Parinita Edke Contributions to Science: 
+- Conference Publications: 
+    - Childhood Adversity’s Impact on Dynamic Mental Health During and Post Pregnancy. IEEE Swiss Conference on Data Science: Data Science for Mental and Neurodegenerative Disorders Workshop (Abstract) (2023)
+- Journal Publications: 
+    - Deep-learning computer vision can identify increased nuchal translucency in the first trimester of pregnancy. Ultrasound in Obstetrics & Gynecology (UOG) (under review) (Kasera, Bhavya; Shinar, Shiri; Edke, Parinita; Pruthi, Vagisha; Goldenberg, Anna; Erdman, Lauren; Van Mieghem, Tim)
+- Posters: 
+    - Artificial intelligence to detect increased nuchal translucency in the first trimester of pregnancy. 20th World Congress in Fetal Medicine (Kasera, B; Edke, P; Shinar, S; Pruthi, V; Goldenberg, A; Erdman, L; Van Mieghem, T) (2023)
+    - Causal Discovery in Mental Health during pregnancy. Vector Institute Research Symposium (Edke, P; Yu, J; Zhu, R; Ali, M) (2023)
+    - Using deep-learning models to detect fetal anomalies in first trimester prenatal ultrasound images. SickKids Summer Research Symposium (Edke, P; Erdman, L; Shinar, S; Van Mieghem, T; Goldenberg, A) (2021)
+Parinita Edke Teaching: 
+- Introduction to Computer Science (CSC148H5), Teaching Assistant, Department of Computer Science, University of Toronto (2023-Summer)
+- Software Tools and Systems Programming (CSC209H1), Teaching Assistant, Department of Computer Science, University of Toronto (2023-Winter, 2022-Winter)
+- Introduction to Databases (CSC343H1), Teaching Assistant, Department of Computer Science, University of Toronto (2022-Fall)
+Parinita Edke Community and Volunteer Activities: 
+- Volunteer Judge, SRHacks 2023, University of Toronto (2023)
+- Undergraduate Advisor, Department of Computer Science, University of Toronto (2021-2022)
+- Head Peer Mentor, New College (2019-2022)
+- Student Mentor, Big Brothers Big Sisters of Toronto (2020-2022)
+- Volunteer Tutor, Frontier College Hamilton (2020-2022)
+- Swim Instructor, Swimming With A Mission Toronto (2018-2022)
+
+KRISHNA ADVAIT SRIPADA Location: Toronto, ON
+KRISHNA ADVAIT SRIPADA University: University of Toronto
+KRISHNA ADVAIT SRIPADA Degree: Bachelor of Applied Science
+KRISHNA ADVAIT SRIPADA Major: Computer Engineering
+KRISHNA ADVAIT SRIPADA Minor: Engineering Business, Artificial Intelligence Engineering
+KRISHNA ADVAIT SRIPADA Graduation Date: 2026
+KRISHNA ADVAIT SRIPADA Email: krishna.sripada@mail.utoronto.ca
+KRISHNA ADVAIT SRIPADA Phone Number: +16476792419
+KRISHNA ADVAIT SRIPADA Skills: ['C++', 'Java', 'Python', 'SciPy', 'PyTorch', 'NumPy', 'HTML', 'JavaScript', 'MATLAB', 'Pandas', 'Problem-solving', 'Decision Making', 'Project Management', 'Leadership', 'Teamwork', 'Communication', 'Collaboration', 'Adaptability', 'Object Oriented Programming (OOPs)', 'Data Structures & Algorithms', 'ROS', 'Git', 'Github', 'API', 'SSH', 'Valgrind', 'UNIX', 'Bash', 'VS Code', 'NetBeans', 'Quartus', 'ModelSim', 'Simulink', 'CPULator', 'JRE', 'Arduino UNO']
+KRISHNA ADVAIT SRIPADA Work Experience: [
+    'University of Toronto Robotics Association (Autonomous Rover Team)': [
+        KRISHNA ADVAIT SRIPADA Skills: ['Linux', 'ROS', 'Git', 'Github', 'TurtleSim', 'Caffeine', 'Gazebo', 'RVIZ']
+    ]
+]
+KRISHNA ADVAIT SRIPADA Projects: [
+    'Wayfinder - Geographic Information System (GIS) software application': [
+        KRISHNA ADVAIT SRIPADA Skills: ['C++', 'Git', 'StreetsDatabase API', 'OSMDatabase API', 'Dijkstra', 'A*', 'C++ STL', 'EZGL', 'GTK', 'Glade', 'Libcurl']
+    ],
+    'Cricket Score Predictor': [
+        KRISHNA ADVAIT SRIPADA Skills: ['Python', 'PyTorch', 'Pandas', 'NumPy', 'Matplotlib']
+    ],
+    'Mission: Critical': [
+        KRISHNA ADVAIT SRIPADA Skills: ['C', 'DE1-SoC board', 'FPGA', 'VGA monitor']
+    ],
+    'Artificial Intelligence - Reversi': [
+        KRISHNA ADVAIT SRIPADA Skills: ['C']
+    ]
+]
 
