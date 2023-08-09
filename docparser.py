@@ -10,6 +10,7 @@ import streamlit as st
 import ast
 import copy
 
+from langchain.llms import OpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -268,6 +269,13 @@ def get_combined_text(resumes, add_name=False):
     # define llm --------------------------------
     llm = ChatOpenAI(temperature=0)
 
+    # personal info --------------------------------
+    info_dict = {
+        'Name':[],
+        'Email':[],
+        'Phone Number': [], 
+    }
+
     # clean up resume text --------------------
     prompt_template = """Remove all the 1) useless characters and terms and 2) remove specific work experience/project description from the resume. Return a cleaned version:
     "{text}"
@@ -284,6 +292,7 @@ def get_combined_text(resumes, add_name=False):
     for i, resume in enumerate(resumes):
         print(f'Parsing {i}')
 
+        # info extraction ----------------------------------------------------------------
         # split text --------------------------------
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
         splits = text_splitter.split_text(resume)
@@ -294,15 +303,22 @@ def get_combined_text(resumes, add_name=False):
         vectorstore = Chroma.from_documents(splits, embeddings, collection_name=f'candiate{i}')
 
         retrieval_chain = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 1})
+            llm=OpenAI(temperature=0), chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 1})
         )
 
         # create vectorstore for retrieval --------------------------------
         question = 'Provide the full name of the person in the document in this format:{Full Name}'
         candidate = retrieval_chain.run(question)
 
+        # info retreiver --------------------------------
+        info_dict['Name'].append(candidate)
+        info_fields = ['Phone Number', 'Email']
+        for f in info_fields:
+            query = QUESTION_SCHEMA[f]
+            info_dict[f].append(retrieval_chain.run(query))
+        
+
         if not add_name:
-            # split text --------------------------------
             template = ChatPromptTemplate.from_messages([
                 ("system", DIRECT_PARSE_SYSTEM_MESSAGE),
                 ("human", DIRECT_PARSE_TEMPLATE),
@@ -324,4 +340,4 @@ def get_combined_text(resumes, add_name=False):
 
         status_bar.progress(int((i+1)/len(resumes)*100), text='Parsing resume...')
 
-    return all_resume_text
+    return all_resume_text, info_dict

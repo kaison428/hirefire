@@ -84,8 +84,8 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
         resume_database_df = get_df_from_json(resume_database)
 
     elif parse_method == 'one_shot':
-        resume_database_text = get_combined_text(resumes)
-        resume_database_df = pd.DataFrame()
+        resume_database_text, info_dict = get_combined_text(resumes)
+        resume_database_df = pd.DataFrame(info_dict)
 
     # ----------------------------------------------------------------
     # save it for inspection
