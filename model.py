@@ -115,7 +115,7 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
 
     llm = ChatOpenAI(temperature=0)
     retrieval_chain = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
+            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 10})
         )
     
     tools = [
