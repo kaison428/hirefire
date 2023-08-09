@@ -98,7 +98,7 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
         resume_database_text = f.read()
     # ----------------------------------------------------------------
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=0)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=0)
     splits = text_splitter.split_text(resume_database_text)
 
     docs = [Document(page_content=t) for t in splits[:]]
@@ -115,7 +115,7 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
 
     llm = ChatOpenAI(temperature=0)
     retrieval_chain = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 10})
+            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 5})
         )
     
     tools = [
