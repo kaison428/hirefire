@@ -225,23 +225,17 @@ Hongyu (Liam) Ma Graduation Date': '06/2021',
 Hongyu (Liam) Ma Email': 'MaL2K16@outlook.com',
 Hongyu (Liam) Ma Phone Number': '4039684717',
 Hongyu (Liam) Ma GPA': '3.5',
-Hongyu (Liam) Ma Work Experience': [
-        'Pembina Pipeline Corporation, Technical Services Unit': [
-            Hongyu (Liam) Ma Skills: ['Pipeline bending strain analysis']
-        ]
-    ]
-Hongyu (Liam) Ma Projects': [
-        'University of Toronto Seismic Design Team': [
-            Hongyu (Liam) Ma Skills: ['S-Frame', 'SAP2000', 'MATLAB', 'Python']
-        ],
-        'Capstone Project - Football Stadium Concept Design': [
-            Hongyu (Liam) Ma Skills: ['AutoCAD', 'S-Frame', 'S-Steel', 'S-Concrete', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3']
-        ],
-        'Steel Building Frame Design Project': [
-            Hongyu (Liam) Ma Skills: ['S-Frame', 'NBCC 2015', 'CSA S16-14', 'NBCC 2015']
-        ],
-    ]
-Hongyu (Liam) Ma Skills':['S-Steel', 'S-Concrete', 'AutoCAD', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3', 'Pipeline Bending Strain Analysis', 'MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
+Hongyu (Liam) Ma Work Experience':
+    - Hongyu (Liam) Ma at 'Pembina Pipeline Corporation, Technical Services Unit' 
+        - Applied Skills:['Pipeline bending strain analysis']
+Hongyu (Liam) Ma Projects':
+    - Hongyu (Liam) Ma on 'University of Toronto Seismic Design Team'
+        - Applied Skills: ['S-Frame', 'SAP2000', 'MATLAB', 'Python']
+    - Hongyu (Liam) Ma on 'Capstone Project - Football Stadium Concept Design'
+        - Applied Skills: ['AutoCAD', 'S-Frame', 'S-Steel', 'S-Concrete', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3']
+    - Hongyu (Liam) Ma on 'Steel Building Frame Design Project' 
+        - Applied Skills: ['S-Frame', 'NBCC 2015', 'CSA S16-14', 'NBCC 2015']
+Hongyu (Liam) Ma Skills': ['S-Steel', 'S-Concrete', 'AutoCAD', 'NBCC 2015', 'CSA S16-14', 'CSA A23.3', 'Pipeline Bending Strain Analysis', 'MATLAB', 'S-Frame', 'SAP2000', 'Microsoft Excel', 'Visual Basic (VBA)', 'LaTex', 'Python', 'Technical report writing', 'English and Mandarion speaker']
 '''
 
 DIRECT_PARSE_TEMPLATE = '''

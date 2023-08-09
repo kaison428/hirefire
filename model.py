@@ -90,7 +90,7 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
     # ----------------------------------------------------------------
     # save it for inspection
     fname = 'output.txt'
-    with open(fname, 'w') as f:
+    with open(fname, 'w', encoding="utf-8") as f:
         f.write(resume_database_text)
 
     fname = 'output.txt'

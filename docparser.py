@@ -51,6 +51,9 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
     if summarize:
         resume_sample_local = summarize_chain.run(RESUME_SAMPLE)
 
+    # progress bar
+    status_bar = st.progress(0, text='Parsing resume...')
+
     for i, resume in enumerate(resumes):
 
         # split text --------------------------------
@@ -87,6 +90,9 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
         resume_database[candidate] = resume_data
         raw_resumes[candidate] = resume
         retrieval_chains[(f'candiate{i}', candidate)] = retrieval_chain
+
+        # progress bar ----------------------------------------------------------------
+        status_bar.progress(int((i+1)/len(resumes)*100), text='Parsing resume...')
 
     return resume_database, raw_resumes, retrieval_chains
 
@@ -258,7 +264,7 @@ def get_df_from_json(database):
 
     return pd.DataFrame(database_dict)
 
-def get_combined_text(resumes):
+def get_combined_text(resumes, add_name=False):
     # define llm --------------------------------
     llm = ChatOpenAI(temperature=0)
 
@@ -277,21 +283,43 @@ def get_combined_text(resumes):
 
     for i, resume in enumerate(resumes):
         print(f'Parsing {i}')
-        resume = summarize_chain.run(resume)
 
         # split text --------------------------------
-        template = ChatPromptTemplate.from_messages([
-            ("system", DIRECT_PARSE_SYSTEM_MESSAGE),
-            ("human", DIRECT_PARSE_TEMPLATE),
-        ])
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
+        splits = text_splitter.split_text(resume)
+        splits = [Document(page_content=t) for t in splits[:]]
 
-        messages = template.format_messages(
-            resume_sample=resume_sample_local,
-            resume_sample_output=DIRECT_PARSE_ANSWER,
-            resume=resume,
+        # create vectorstore for retrieval --------------------------------
+        embeddings = OpenAIEmbeddings()
+        vectorstore = Chroma.from_documents(splits, embeddings, collection_name=f'candiate{i}')
+
+        retrieval_chain = RetrievalQA.from_chain_type(
+            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 1})
         )
 
-        all_resume_text += llm(messages).content
+        # create vectorstore for retrieval --------------------------------
+        question = 'Provide the full name of the person in the document in this format:{Full Name}'
+        candidate = retrieval_chain.run(question)
+
+        if not add_name:
+            # split text --------------------------------
+            template = ChatPromptTemplate.from_messages([
+                ("system", DIRECT_PARSE_SYSTEM_MESSAGE),
+                ("human", DIRECT_PARSE_TEMPLATE),
+            ])
+
+            messages = template.format_messages(
+                resume_sample=resume_sample_local,
+                resume_sample_output=DIRECT_PARSE_ANSWER,
+                resume=resume,
+            )
+            all_resume_text += llm(messages).content
+
+        else:
+            resume = summarize_chain.run(resume)
+            resume_text = ('\n').join([f'{candidate} {l}' for l in resume.split("\n")])
+            all_resume_text += resume_text
+
         all_resume_text += '\n\n'
 
         status_bar.progress(int((i+1)/len(resumes)*100), text='Parsing resume...')

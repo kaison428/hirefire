@@ -84,7 +84,7 @@ def get_agent_from_data(files):
         resumes.append(get_text_from_pdf(file))
 
     # 2. Build an agent from the database
-    overall_chain, agent, df_database = get_agent(resumes, embedding_type='InstructXL')
+    overall_chain, agent, df_database = get_agent(resumes, embedding_type='InstructXL', parse_method='one_shot')
     return overall_chain, agent, df_database
 
 if process_button:
