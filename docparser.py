@@ -54,7 +54,7 @@ def get_database_from_resume(resumes, method='retrieval', summarize=True):
     for i, resume in enumerate(resumes):
 
         # split text --------------------------------
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=0)
         splits = text_splitter.split_text(resume)
         splits = [Document(page_content=t) for t in splits[:]]
 
