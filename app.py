@@ -130,7 +130,7 @@ with chat_container:
                 process_chain = st.session_state["process_chain"]
 
                 processed_prompt = process_chain({'prompt': prompt})['answer']
-                full_response = agent.run(processed_prompt)
+                full_response = agent.run(prompt)
 
                 message_placeholder.markdown(full_response)
 
