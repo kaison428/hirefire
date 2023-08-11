@@ -32,7 +32,6 @@ from langchain import LLMMathChain, SerpAPIWrapper
 
 from langchain.llms import OpenAI
 
-
 # Scheme imports ------------------------------
 from langchain.schema import (
     AIMessage,
@@ -40,6 +39,8 @@ from langchain.schema import (
     SystemMessage
 )
 from langchain.prompts import PromptTemplate
+
+VERBOSE = False
 
 # Utilities ------------------------------
 def get_text_from_pdf(fileobj):
@@ -115,8 +116,8 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
 
     llm = ChatOpenAI(temperature=0)
     retrieval_chain = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_kwargs={'k': 5})
-        )
+            llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(search_type="mmr", search_kwargs={'k': 5})
+    )
     
     tools = [
         Tool(
@@ -141,7 +142,7 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
         tools, 
         llm, 
         agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, 
-        verbose=True, 
+        verbose=VERBOSE, 
         handle_parsing_errors=True,
         early_stopping_methods='generate', 
         memory=memory,
@@ -189,6 +190,6 @@ def get_agent(resumes, embedding_type='OpenAI', parse_method='one_shot'):
         chains=[email_id_chain, address_chain],
         input_variables=["prompt"],
         output_variables=["answer"],
-        verbose=True)
+        verbose=VERBOSE)
     
     return overall_chain, agent, resume_database_df
